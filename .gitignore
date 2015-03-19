@@ -52,3 +52,11 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# pycharm
+.idea/
+
+# credentials etc
+credentials.yml
+auth.yml
+data/
