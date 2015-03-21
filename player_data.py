@@ -17,7 +17,7 @@ query = basic_player_req(players['yahoo_code'])
 player_data = []
 
 #loop over players and look up data
-for i in range(1796, len(players)+1):
+for i in range(0, len(players)+1):
     p = auth.api_query(y, basic_player_req(players.iloc[i]['yahoo_code']))
     #some players dont exist in a given year.  skip them
     if 'error' in p.keys():
@@ -51,6 +51,3 @@ auth.data_to_csv(
     data_to_write=player_data,
     desired_name='player_data'
 )
-
-for i in player_data:
-    i.pop('eligible_positions', None)
