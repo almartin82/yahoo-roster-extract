@@ -60,3 +60,4 @@ target/
 credentials.yml
 auth.yml
 data/
+input/

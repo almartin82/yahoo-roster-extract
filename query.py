@@ -1,8 +1,5 @@
 import auth
 import csv
-import os
-from collections import OrderedDict
-import unicodecsv
 import datetime
 
 csv.register_dialect('ALM', delimiter=',', quoting=csv.QUOTE_ALL)
@@ -24,29 +21,6 @@ def team_data(team_code):
 def roster_data(team_code, date_wanted):
     return "http://fantasysports.yahooapis.com/fantasy/v2/team/" + team_code + "/roster;date=" + date_wanted.isoformat()
 
-def data_to_csv(target_dir, data_to_write, desired_name):
-    """Convenience function to write a dict to CSV with appropriate parameters."""
-    #generate directory if doesn't exist
-    global d
-    if len(data_to_write) == 0:
-        return None
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
-    if type(data_to_write) == dict:
-        #order dict by keys
-        d = OrderedDict(sorted(data_to_write.items()))
-        keys = d.keys()
-    if type(data_to_write) == list:
-        d = data_to_write
-        keys = data_to_write[0].keys()
-    with open("%s/%s.csv" % (target_dir, desired_name), 'wb') as f:
-        dw = unicodecsv.DictWriter(f, keys, dialect='ALM')
-        dw.writeheader()
-        if type(data_to_write) == dict:
-            dw.writerow(d)
-        if type(data_to_write) == list:
-            dw.writerows(d)
-    f.close()
 
 hpk = [
     #2014
