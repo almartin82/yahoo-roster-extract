@@ -77,7 +77,7 @@ def yahoo_session():
 
 def api_query(y_session, query):
     r = y_session.get(query)
-    time.sleep(0.5)
+    time.sleep(1)
     return xmltodict.parse(r.content)
 
 def data_to_csv(target_dir, data_to_write, desired_name):

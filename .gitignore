@@ -55,6 +55,7 @@ target/
 
 # pycharm
 .idea/
+*.py___jb_bak___
 
 # credentials etc
 credentials.yml

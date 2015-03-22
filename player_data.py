@@ -7,9 +7,6 @@ csv.register_dialect('ALM', delimiter=',', quoting=csv.QUOTE_ALL)
 #yahoo session
 y = auth.yahoo_session()
 
-def basic_player_req(playerid):
-    return 'http://fantasysports.yahooapis.com/fantasy/v2/player/' + playerid
-
 players = pd.read_csv('input/auction_results.csv')
 query = basic_player_req(players['yahoo_code'])
 
@@ -17,7 +14,7 @@ query = basic_player_req(players['yahoo_code'])
 player_data = []
 
 #loop over players and look up data
-for i in range(0, len(players)+1):
+for i in range(0, len(players)):
     p = auth.api_query(y, basic_player_req(players.iloc[i]['yahoo_code']))
     #some players dont exist in a given year.  skip them
     if 'error' in p.keys():
