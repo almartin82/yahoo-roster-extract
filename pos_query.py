@@ -8,10 +8,9 @@ csv.register_dialect('ALM', delimiter=',', quoting=csv.QUOTE_ALL)
 #yahoo session
 y = auth.yahoo_session()
 
-cur_yahoo = pd.read_csv('input/yahoo_players.csv')
-query = data_prep.basic_player_req(cur_yahoo['yahoo_code'])
+prev_auction = pd.read_csv('input/2014_auctioned_players.csv')
+query = data_prep.basic_player_req(prev_auction['player_key'])
 
-yahoo_resp = []
 player_pos = []
 
 for i in range(0, len(query)):
@@ -30,19 +29,9 @@ for i in range(0, len(query)):
         print j
         player_pos.append({'playerid': playerid, 'pos': elig_pos[j]})
 
-    p_data = data_prep.process_player_dict(p)
-    yahoo_resp.append(p_data)
-
-#write data
-auth.data_to_csv(
-    target_dir="data",
-    data_to_write=yahoo_resp,
-    desired_name='yahoo_cur_yr'
-)
-
 #write data
 auth.data_to_csv(
     target_dir="data",
     data_to_write=player_pos,
-    desired_name='player_pos'
+    desired_name='2014_auction_pos'
 )

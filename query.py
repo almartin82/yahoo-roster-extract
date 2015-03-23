@@ -123,13 +123,13 @@ for i in hpk:
             rosters.append(k)
 
 #write data
-data_to_csv(
+auth.data_to_csv(
     target_dir="data",
     data_to_write=leagues,
     desired_name='leagues'
 )
 
-data_to_csv(
+auth.data_to_csv(
     target_dir="data",
     data_to_write=teams,
     desired_name='teams'

@@ -7,6 +7,9 @@ csv.register_dialect('ALM', delimiter=',', quoting=csv.QUOTE_ALL)
 #yahoo session
 y = auth.yahoo_session()
 
+def basic_player_req(playerid):
+    return 'http://fantasysports.yahooapis.com/fantasy/v2/player/' + playerid
+
 players = pd.read_csv('input/auction_results.csv')
 query = basic_player_req(players['yahoo_code'])
 
@@ -37,6 +40,7 @@ for i in range(0, len(players)):
     #these fields are inconsistent - don't need them
     p.pop("headshot", None)
     p.pop("position", None)
+    p.pop("has_player_notes", None)
     p.pop("has_recent_player_notes", None)
     p.pop("status", None)
     p.pop("on_disabled_list", None)
