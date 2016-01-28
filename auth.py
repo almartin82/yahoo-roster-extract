@@ -2,7 +2,6 @@ import yaml
 import requests_oauthlib
 import requests
 import urlparse
-import os.path
 import xmltodict
 import time
 import os
@@ -35,7 +34,7 @@ def user_auth():
     #get the verification code (interactive)
     authorize_url = authorization_base_url + '?oauth_token='
     authorize_url = authorize_url + owner_key
-    print 'Please go here and authorize,', authorize_url
+    print('Please go here and authorize,', authorize_url)
     verifier = raw_input('Please input the verifier, ')
 
     #get the final token
