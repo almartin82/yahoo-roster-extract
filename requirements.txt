@@ -2,3 +2,4 @@ pyyaml
 requests_oauthlib
 requests
 xmltodict
+pandas

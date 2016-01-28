@@ -23,8 +23,8 @@ def roster_data(team_code, date_wanted):
 
 
 hpk = [
-    #2016
-    {'gameid': 357, 'leagueid': 00000},
+    # #2016 (no league yet)
+    # {'gameid': 357, 'leagueid': 00000},
     #2015
     {'gameid': 346, 'leagueid': 49099},
     #2014
