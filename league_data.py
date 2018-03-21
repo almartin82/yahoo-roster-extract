@@ -1,6 +1,8 @@
 hpk = [
-    # #2016 (no league yet)
-    # {'gameid': 357, 'leagueid': 00000},
+    #2017
+    {'gameid': 370, 'leagueid': 107101},
+    #2016
+    {'gameid': 357, 'leagueid': 91406},
     #2015
     {'gameid': 346, 'leagueid': 49099},
     #2014
