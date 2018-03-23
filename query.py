@@ -14,13 +14,13 @@ def make_team_code(gameid, leagueid, teamid):
     return str(gameid) + '.l.' + str(leagueid) + '.t.' + str(teamid)
 
 def league_data(league_code):
-    return "http://fantasysports.yahooapis.com/fantasy/v2/league/" + league_code
+    return "https://fantasysports.yahooapis.com/fantasy/v2/league/" + league_code
 
 def team_data(team_code):
-    return "http://fantasysports.yahooapis.com/fantasy/v2/team/" + team_code
+    return "https://fantasysports.yahooapis.com/fantasy/v2/team/" + team_code
 
 def roster_data(team_code, date_wanted):
-    return "http://fantasysports.yahooapis.com/fantasy/v2/team/" + team_code + "/roster;date=" + date_wanted.isoformat()
+    return "https://fantasysports.yahooapis.com/fantasy/v2/team/" + team_code + "/roster;date=" + date_wanted.isoformat()
 
 
 leagues = []
