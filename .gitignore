@@ -59,6 +59,7 @@ target/
 
 # credentials etc
 credentials.yml
+oauth2.json
 auth.yml
 data/
 input/
