@@ -37,7 +37,7 @@ def data_to_csv(target_dir, data_to_write, desired_name):
         d = data_to_write
         keys = data_to_write[0].keys()
     with open("%s/%s.csv" % (target_dir, desired_name), 'wb') as f:
-        dw = unicodecsv.DictWriter(f, keys, dialect='ALM')
+        dw = unicodecsv.DictWriter(f, keys, dialect='ALM', extrasaction='ignore')
         dw.writeheader()
         if type(data_to_write) == dict:
             dw.writerow(d)
