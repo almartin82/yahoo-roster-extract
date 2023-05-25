@@ -1,4 +1,4 @@
-# yahoo_roster_extract
+# yahoo-roster-extract
 use yahoo's fantasy API to download fantasy team / roster data
 
 ## auth
